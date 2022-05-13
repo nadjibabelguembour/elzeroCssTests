@@ -1,0 +1,175 @@
+body{
+    background: linear-gradient(-45deg, #1d1e1f, #B8DCFF, #6BBBFF, #047c60);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+@keyframes gradient {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+/* part1 ___________________________*/
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.container .part1, .part2, .part3, .part4{
+    position: relative;
+    width: 800px;
+    height: 300px;
+    border: 1px solid #047c60;
+
+}
+.part4 {
+    height: 500px;
+}
+.part1::before{
+    content: "PART 1";
+}
+.part2::before{
+    content: "PART 2";
+}
+.part3::before{
+    content: "PART 3";
+}
+.part4::before{
+    content: "PART 4";
+}
+.part1::before,
+.part2::before,
+.part3::before,
+.part4::before{
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px;
+    text-shadow: 5px 5px 5px rgba(255,255,255,0.5);
+}
+.container .part1 div,
+.part2 div{
+    width: 300px;
+    height: 60px;
+    background-color: #eee;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 75px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold; 
+    padding-top: 15px;
+    box-sizing: border-box;  
+    font-family: sans-serif;
+}
+.container .part1 div{
+    width: 300px;
+    left: 250px;
+}
+.container .part2 div{
+    width: 600px;
+    height: 100px;
+    left: 100px;
+    padding-top: 35px;
+}
+.part1 div:nth-child(2){
+    background-color: red;
+    z-index: 2;
+    top: 105px;
+}
+.part1 div:nth-child(1){
+
+    z-index: 3;
+    top: 25px;
+}
+.part1 div:nth-child(3){
+    z-index: 3;
+    top: 185px;
+}
+/*  part 2 ___________________ */
+.part2 div{
+    background-color: #d4d4d4;
+}
+.part2 div::first-letter{
+    background-color: red;
+    color: #fff;
+    font-size: 30px;
+    padding: 20px;
+    position: absolute;
+    float: left;
+    top: 50px;
+    margin-left: -30px;
+    margin-top: -22px;   
+}
+/* part 3: _____________________*/
+
+.part3 p{
+    background-color: #eee;
+    width: 400px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    position: relative;
+    border-left: 5px solid #c90d81;
+    margin-left: 217px;
+}
+.part3 p::before{
+    content: attr(data-person);
+    background-color: #eee;
+    position: absolute;
+    left: -95px;
+    top: 10px;
+    padding: 10px;
+    width: 50px;
+}
+.part3 p::after{
+    content: "";
+    position: absolute;
+    width: 0px;
+    border-left:15px solid transparent;
+    border-right:15px solid #c90d81;
+    border-top:15px solid transparent;
+    border-bottom:15px solid transparent;
+    height: 0;
+    left: -32px;
+    top: 15px;
+}
+.part4 p{
+background-color: #eee;
+width: 400px;
+padding: 20px;
+margin: 10px auto;
+font-weight: bold;
+position: relative;
+counter-increment: number;
+}
+.part4 p::before{
+content: counter(number);
+background-color: #f84336;
+color: white;
+padding: 20px;
+position: absolute;
+float: left;
+left: -48px;
+top: 0px;
+}
+.part4 p::after{
+content: "";
+background-color: #f84336;
+position: absolute;
+height: 58px;
+width: 5px;
+float: right;
+right: -3px;
+top: 0;
+}
+
